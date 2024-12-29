@@ -24,7 +24,7 @@
                 <input wire:model.defer="email" type="text" placeholder="Username" name="username" autocomplete="off" class="form-control bg-transparent" />
                 <!--end::Username-->
                 @error('email')
-                <div class="fv-plugins-message-container text-white invalid-feedback">
+                <div class="fv-plugins-message-container text-danger">
                     {{ $message }}
                 </div>
                 @enderror
@@ -35,7 +35,7 @@
                 <input wire:model.defer="password" type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent" />
                 <!--end::Password-->
                 @error('password')
-                <div class="fv-plugins-message-container text-white invalid-feedback">
+                <div class="fv-plugins-message-container text-danger">
                     {{ $message }}
                 </div>
                 @enderror

@@ -54,6 +54,7 @@ function getAdminGlobalModals()
                 'modal_dialog_class' => 'mw-650px',
             ]
         ],
+
         [
             'modal_id' => 'create_program_modal',
             'livewire_component' => 'admin.program.form.create',

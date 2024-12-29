@@ -56,8 +56,10 @@ class Employee extends Model
     public function getImagePathAttribute()
     {
         $url = '#';
-        if (Storage::disk('employee')->exists($this->profile_image_path)) {
-            $url = Storage::disk('employee')->url($this->profile_image_path);
+        if ($this->profile_image_path) {
+            if (Storage::disk('employee')->exists($this->profile_image_path)) {
+                $url = Storage::disk('employee')->url($this->profile_image_path);
+            }
         }
         return $url;
     }
