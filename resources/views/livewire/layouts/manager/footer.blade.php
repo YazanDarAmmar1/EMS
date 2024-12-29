@@ -5,7 +5,7 @@
             <!--begin::Copyright-->
             <div class="text-dark order-2 order-md-1">
                 <span class="text-muted fw-semibold me-1">{{ date('Y') }} &copy;</span>
-                <a href="https://www.quality-solution.net" target="_blank" class="text-gray-800 text-hover-primary">Quality Solutions</a>
+                <a href="" target="_blank" class="text-gray-800 text-hover-primary">Bahrain University</a>
             </div>
             <!--end::Copyright-->
         </div>

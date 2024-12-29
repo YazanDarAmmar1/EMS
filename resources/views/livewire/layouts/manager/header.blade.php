@@ -217,7 +217,7 @@
                                     <!--begin::Username-->
                                     <div class="d-flex flex-column">
                                         <div class="fw-bold d-flex align-items-center fs-5">
-                                            {{--                                            {{ Auth('admin')->User()->name }}--}}
+                                            {{ Auth('manager')->User()->manager_full_name }}
                                         </div>
                                     </div>
                                     <!--end::Username-->
@@ -230,7 +230,7 @@
                             <!--end::Menu separator-->
                             <!--begin::Menu item-->
                             <div class="menu-item px-5">
-                                {{--                                <a href="{{ route('admin.auth.logout') }}" class="menu-link px-5">Sign Out</a>--}}
+                                <a href="{{ route('manager.auth.logout') }}" class="menu-link px-5">Sign Out</a>
                             </div>
                             <!--end::Menu item-->
                         </div>

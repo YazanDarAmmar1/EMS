@@ -19,6 +19,9 @@ class Authenticate extends Middleware
             if (in_array('auth:manager', $request->route()->middleware())) {
                 return route('manager.auth.login');
             }
+            if (in_array('auth:employee', $request->route()->middleware())) {
+                return route('employee.auth.login');
+            }
         }
     }
 }
