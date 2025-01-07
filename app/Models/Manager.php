@@ -47,6 +47,11 @@ class Manager extends Authenticatable
         return $this->first_name . ' ' . $this->last_name;
     }
 
+    public function getCountProgramsAttribute()
+    {
+        return count($this->Department->trainingPrograms);
+    }
+
     public function getImagePathAttribute()
     {
         $url = '#';

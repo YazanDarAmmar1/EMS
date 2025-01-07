@@ -30,6 +30,14 @@ Route::prefix('employee')->group(function () {
             Route::get('/', Employee\Dashboard\Index::class)->name('employee.dashboard');
         });
 
+        Route::group([
+            'prefix' => 'programs',
+            'middleware' => 'auth:employee',
+        ], function () {
+            Route::get('/', Employee\Program\Index::class)->name('employee.programs.index');
+            Route::get('/tasks/{registration}', Employee\Program\Details\TaskList::class)->name('employee.programs.task');
+        });
+
     });
 });
 

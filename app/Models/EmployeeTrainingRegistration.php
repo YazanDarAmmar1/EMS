@@ -38,6 +38,21 @@ class EmployeeTrainingRegistration extends Model
         return $this->getStringFromGenericHuman('TrainingProgram', 'name');
     }
 
+    public function getTrainingProgramStartDateAttribute()
+    {
+        return $this->getStringFromGenericHuman('TrainingProgram', 'start_date');
+    }
+
+    public function getTrainingProgramEndDateAttribute()
+    {
+        return $this->getStringFromGenericHuman('TrainingProgram', 'end_date');
+    }
+
+    public function getTotalTasksAttribute()
+    {
+        return count($this->tasks);
+    }
+
     public function getStatusChangedAttribute()
     {
         $status = [
@@ -51,7 +66,6 @@ class EmployeeTrainingRegistration extends Model
         return true;
     }
 
-
     public function completed()
     {
         $this->status = StatusEnum::COMPLETED;
@@ -63,4 +77,21 @@ class EmployeeTrainingRegistration extends Model
         $this->status = StatusEnum::CANCELLED;
         return ($this->save());
     }
+
+    public function getCompletionRateAttribute()
+    {
+        $rate = 0;
+        $total_tasks = $this->getTotalTasksAttribute();
+
+        if ($total_tasks > 0) {
+            $total_task_completed = $this->tasks()->Completed()->count();
+
+            if ($total_task_completed) {
+                $rate = ($total_task_completed / $total_tasks) * 100;
+            }
+        }
+
+        return $rate;
+    }
+
 }

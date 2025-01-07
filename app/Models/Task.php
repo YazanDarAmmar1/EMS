@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\TaskStatusEnum;
 use App\Traits\WithStringFromGenericHuman;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -44,5 +45,10 @@ class Task extends Model
     public function getManagerImagePathAttribute()
     {
         return $this->getStringFromGenericHuman('Manager', 'image_path');
+    }
+
+    public function scopeCompleted($query)
+    {
+        return $query->where('status', TaskStatusEnum::COMPLETED);
     }
 }

@@ -122,7 +122,7 @@ www.ebepro.com
 
 @stack('js')
 
-{{--@include('modals.manager')--}}
+@include('modals.employee')
 
 <!--end::Javascript-->
 </body>

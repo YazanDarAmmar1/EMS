@@ -59,12 +59,12 @@
                                         <span class="path2"></span>
                                     </i>
                                     <div class="fs-2 fw-bold" data-kt-countup="true"
-                                         data-kt-countup-value="4500" data-kt-countup-prefix="$">0
+                                         data-kt-countup-value="{{$this->employee->total_program}}" data-kt-countup-prefix="">0
                                     </div>
                                 </div>
                                 <!--end::Number-->
                                 <!--begin::Label-->
-                                <div class="fw-semibold fs-6 text-gray-400">Earnings</div>
+                                <div class="fw-semibold fs-6 text-gray-400">Programs</div>
                                 <!--end::Label-->
                             </div>
                             <!--end::Stat-->
@@ -78,12 +78,12 @@
                                         <span class="path2"></span>
                                     </i>
                                     <div class="fs-2 fw-bold" data-kt-countup="true"
-                                         data-kt-countup-value="80">0
+                                         data-kt-countup-value="{{$this->employee->total_program_canceled}}">0
                                     </div>
                                 </div>
                                 <!--end::Number-->
                                 <!--begin::Label-->
-                                <div class="fw-semibold fs-6 text-gray-400">Projects</div>
+                                <div class="fw-semibold fs-6 text-gray-400">canceled</div>
                                 <!--end::Label-->
                             </div>
                             <!--end::Stat-->
@@ -97,12 +97,12 @@
                                         <span class="path2"></span>
                                     </i>
                                     <div class="fs-2 fw-bold" data-kt-countup="true"
-                                         data-kt-countup-value="60" data-kt-countup-prefix="%">0
+                                         data-kt-countup-value="{{$this->employee->total_program_completed}}" data-kt-countup-prefix="">0
                                     </div>
                                 </div>
                                 <!--end::Number-->
                                 <!--begin::Label-->
-                                <div class="fw-semibold fs-6 text-gray-400">Success Rate</div>
+                                <div class="fw-semibold fs-6 text-gray-400">Completed</div>
                                 <!--end::Label-->
                             </div>
                             <!--end::Stat-->
@@ -113,11 +113,11 @@
                     <!--begin::Progress-->
                     <div class="d-flex align-items-center w-200px w-sm-300px flex-column mt-3">
                         <div class="d-flex justify-content-between w-100 mt-auto mb-2">
-                            <span class="fw-semibold fs-6 text-gray-400">Profile Compleation</span>
-                            <span class="fw-bold fs-6">50%</span>
+                            <span class="fw-semibold fs-6 text-gray-400">Programs Compleation</span>
+                            <span class="fw-bold fs-6">{{$this->employee->completed_projects_percentage}}%</span>
                         </div>
                         <div class="h-5px mx-3 w-100 bg-light mb-3">
-                            <div class="bg-success rounded h-5px" role="progressbar" style="width: 50%;"
+                            <div class="bg-success rounded h-5px" role="progressbar" style="width: {{$this->employee->completed_projects_percentage}}%;"
                                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>

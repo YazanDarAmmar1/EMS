@@ -13,9 +13,9 @@ class GlobalFunctionsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-//        require_once base_path().'/app/Helper/LocaleBladeHelper.php';
         require_once base_path().'/app/Helper/AdminModals.php';
         require_once base_path().'/app/Helper/ManagerModals.php';
+        require_once base_path().'/app/Helper/EmployeeModals.php';
     }
 
     /**
